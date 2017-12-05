@@ -1,6 +1,7 @@
 from .models import Album, Song
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic.edit import CreateView
 
 class IndexView(generic.ListView):
     template_name =  'musicapp/index.html'
@@ -11,6 +12,10 @@ class IndexView(generic.ListView):
 class DetailView (generic.DetailView):
     model = Album
     template_name = 'musicapp/detail.html'
+
+class AlbumCreate(CreateView):
+    model = Album
+    fields = ['artist','album_title', 'genre', 'album_logo']
 
 def favorite(request,album_id):
     album = get_object_or_404(Album, pk= album_id)

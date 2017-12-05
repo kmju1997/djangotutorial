@@ -6,7 +6,7 @@
 
     {% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'musicapp/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'musicapp/style1.css' %}" />
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -23,7 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{%  url "musicapp:index"%} ">Minju</a>
+      <a class="navbar-brand" id="logo" href="{%  url "musicapp:index"%} ">Minju</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,7 +36,7 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class = "glyphicon glyphicon-plus"></span>&nbsp;Add Songs</a></li>
+        <li><a href="{% url 'musicapp:album_add' %} "><span class = "glyphicon glyphicon-plus"></span>&nbsp;Add Albums</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
